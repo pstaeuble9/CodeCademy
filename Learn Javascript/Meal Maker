@@ -1,0 +1,76 @@
+const menu = {
+  _courses: {
+    appetizers: [],
+    main:  [],
+    desserts: [], 
+  },
+  //getters
+    get appetizers() { 
+      return this.appetizers},
+    get main() { 
+      return this.main},
+    get desserts() { 
+      return this.desserts},
+    //get courses
+   	get courses() { 
+     		return {
+     		  appetizers: this._courses.appetizers,
+     		  main: this._courses.main,
+     		  desserts: this._courses.desserts,
+    } 
+   },
+  
+  //setters
+  set appetizers(appetizerIn) { 
+      this.appetizers = appetizerIn},
+  set main(mainIn) { 
+      this.main = mainIn},
+  set desserts(dessertsIn) { 
+      this.desserts = dessertsIn},
+  
+  
+ 	//Methods
+  
+  //add new dish
+  addDishToCourse(courseName, dishName, dishPrice) {
+    const dish = {
+      name: dishName,
+      price: dishPrice,
+    };
+    this._courses[courseName].push(dish);
+  },
+  
+  //get a random dish from a course on the menu
+  getRandomDishFromCourse(courseName) {
+    const dishes = this._courses[courseName];
+    const randomIndex = Math.floor(Math.random() * dishes.length);
+    //return a dish from 'dishes' by using 'randomIndex'
+    return dishes[randomIndex];
+  },
+  //generate a random meal
+  generateRandomMeal() {
+    const appetizer = this.getRandomDishFromCourse('appetizers');
+    const main = this.getRandomDishFromCourse('main');
+    const dessert = this.getRandomDishFromCourse('desserts');
+    const totalPrice = appetizer.price + main.price + dessert.price;
+    
+    return `Your meal will consist of ${appetizer.name}, ${main.name}, and ${dessert.name} for dessert. Your total is $${totalPrice}.`;}
+  
+};
+
+//appetizers
+menu.addDishToCourse('appetizers', 'Caesar Salad', 5.25);
+menu.addDishToCourse('appetizers', 'Onion Rings', 14.00);
+menu.addDishToCourse('appetizers', 'Fried Pickles', 9.25);
+//mains dish
+menu.addDishToCourse('main', '8oz. Filet', 38.50);
+menu.addDishToCourse('main', 'Salmon', 27.25);
+menu.addDishToCourse('main', 'Chicken Alfredo', 18.25);
+//desserts
+menu.addDishToCourse('desserts', 'Cheese Cake', 14.25);
+menu.addDishToCourse('desserts', 'Ice Cream', 7.25);
+menu.addDishToCourse('desserts', 'Chocolate Cake', 12.55);
+
+
+let meal = menu.generateRandomMeal();
+console.log(meal);
