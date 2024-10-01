@@ -1,0 +1,159 @@
+class Media {
+  constructor(title) {
+    this._title = title;
+    this._isCheckedOut = false;
+    this._ratings = [];
+  }
+
+  //Create Getters
+  get title() {
+    return this._title;
+  }
+
+  get isCheckedOut() {
+    return this._isCheckedOut;
+  }
+
+  get ratings() {
+    return this._ratings;
+  }
+
+  set isCheckedOut(status) {
+    this._isCheckedOut = status;
+  }
+
+  //Create methods
+  toggleCheckOutStatus() {
+    this._isCheckedOut = !this._isCheckedOut;
+  }
+
+  getAverageRating() {
+    let ratingsSum = this.ratings.reduce(
+      (accumulator, ratings) => accumulator + ratings,
+      0
+    );
+    const lengthOfRatings = this.ratings.length;
+    return Math.floor(ratingsSum / lengthOfRatings);
+  }
+
+  addRating(newRating) {
+    if (newRating <= 5 && newRating >=1) {
+      return this._ratings.push(newRating);
+    } else {
+      console.log("Please enter a rating between 1 and 5");
+    }
+  }
+}
+
+//extending the media class to books
+class Book extends Media {
+  constructor(author, title, pages) {
+    super(title);
+    this._author = author;
+    this._pages = pages;
+  }
+
+  //getters for Book class
+  get author() {
+    return this._author;
+  }
+
+  get pages() {
+    return this._pages;
+  }
+}
+
+// extending the media class to Movies
+class Movie extends Media {
+  constructor(title, director, runTime, movieCast) {
+    super(title);
+    this._director = director;
+    this._runTime = runTime;
+    this._movieCast = movieCast;
+  }
+
+  //getters for Movie class
+  get director() {
+    return this._director;
+  }
+
+  get runTime() {
+    return this._runTime;
+  }
+
+  get movieCast() {
+    return this._movieCast;
+  }
+}
+
+//extending the media class to CD
+class CD extends Media {
+  constructor(artist, title, songs) {
+    super(title);
+    this._artist = artist;
+    this._songs = songs;
+  }
+  get artist() {
+    return this._artist;
+  }
+  get songs() {
+    return this._songs;
+  }
+  // get the randomly sorted array of all the songs in the songs property
+  shuffle() {
+    return this._songs.sort(() => Math.random() - 0.5);
+  }
+}
+
+// ----- Creating a new book -----
+const historyOfEverything = new Book(
+  "Bill Bryson",
+  "A Short History of Nearly Everything",
+  544
+);
+
+historyOfEverything.toggleCheckOutStatus();
+console.log(historyOfEverything.isCheckedOut);
+// output = true
+
+historyOfEverything.addRating(4);
+historyOfEverything.addRating(5);
+historyOfEverything.addRating(5);
+
+console.log(historyOfEverything.getAverageRating());
+
+// ----- Creating a new movie -----
+const speed = new Movie("Jan de Bont", "Speed", 116, "Tom Cruise");
+
+speed.toggleCheckOutStatus();
+console.log(speed.isCheckedOut);
+// output = true
+
+speed.addRating(1);
+speed.addRating(1);
+speed.addRating(5);
+
+console.log(speed.getAverageRating());
+
+// ----- Creating a new CD -----
+const Mansion = new CD("NF", "Mansion", [
+  "Intro",
+  "Mansion",
+  "Wait",
+  "Wake Up",
+  "Motivated",
+]);
+
+Mansion.toggleCheckOutStatus();
+console.log(Mansion.isCheckedOut);
+
+Mansion.addRating(5);
+Mansion.addRating(5);
+Mansion.addRating(5);
+/* output
+0 & anything >5 = Please enter a rating between 1 and 5
+rating 1-5      = Shows average rating
+*/
+
+// return shuffled songs
+console.log(Mansion.shuffle());
