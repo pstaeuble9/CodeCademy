@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Your Own Cheat Sheet</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="navBar">
+      <ul>
+        <li><a href="#htmlTags">HTML Tags</a></li>
+        <li><a href="#boxModel">the Box Model</a></li>
+        <li><a href="#cssRules">CSS Rules</a></li>
+      </ul>
+    </nav>
+
+    <div id="htmlTags">
+      <h2>HTML Tags</h2>
+      <h3>Common HTML Tags</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Tag</th>
+            <th>Useage</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&lt;head&gt;</td>
+            <td>
+              Contains meta-information about the HTML document, such as title,
+              character set, linked stylesheets, etc.
+            </td>
+            <td>&lt;link rel="stylesheet" href="styles.css"&gt;</td>
+          </tr>
+          <tr>
+            <td>&lt;!----&gt;</td>
+            <td>Creates a comment in HTML</td>
+            <td>&lt;!--this is a comment--&gt;</td>
+          </tr>
+          <tr>
+            <td>&lt;h1&gt; to &lt;h6&gt;</td>
+            <td>
+              Headings, ranging from the largest (h1) to the smallest (h6). They
+              are used to define headings and subheadings.
+            </td>
+            <td>
+              <h1 id="exampleH1">&lt;h1&gt;</h1>
+              <h6 id="exampleH6">&lt;h6&gt;</h6>
+            </td>
+          </tr>
+          <tr>
+            <td>&lt;a&gt;</td>
+            <td>
+              Creates hyperlinks. It's used for creating links to other pages or
+              resources.
+            </td>
+            <td>This is <a href="https://www.w3schools.com">link</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>&lt;ul&gt;</p>
+              <p>&lt;ol&gt;</p>
+              <p>&lt;li&gt;</p>
+            </td>
+            <td>
+              <p>Defines an unordered list (bullet points).</p>
+              <p>Defines an ordered list (numbered).</p>
+              <p>Represents list items within &lt;ul&gt; or &lt;ol&gt;</p>
+            </td>
+            <td>
+              <ul>
+                <li>unordered list item</li>
+                <li>unordered list item</li>
+              </ul>
+              <ol>
+                <li>ordred list item</li>
+                <li>ordred list item</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>&lt;img&gt;</td>
+            <td>Used for posting images</td>
+            <td>
+              <p>
+                &lt;img src="image.jpg" alt="Description of the image"&gt;<br />
+                <i id="imgI">&lt;img&gt; is a self closing tag</i>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>&lt;nav&gt;</td>
+            <td>The nav element defines a set of navigation links</td>
+            <td>
+              <nav>
+                <a href="#commonTags">Common Tags</a> |
+                <a href="#lessCommonTags">Less Common Tags</a> |
+                <a href="#boxModel">Box Model</a> |
+                <a href="#cssRules">CSS Rules</a>
+              </nav>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Lesser common HTML Tags</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Tag</th>
+            <th>Useage</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&lt;details&gt;</td>
+            <td>
+              Allows you to create a disclosure widget from which users can
+              reveal additional information.
+            </td>
+            <td>
+              <details>
+                <summary>Click me</summary>
+                <p>Additional information goes here.</p>
+              </details>
+            </td>
+          </tr>
+          <tr>
+            <td>&lt;mark&gt;</td>
+            <td></td>
+            <td>This is <mark>highlighted</mark> text.</td>
+          </tr>
+          <tr>
+            <td>&lt;cite&gt;</td>
+            <td>
+              Represents the title of a creative work, such as a book or movie.
+            </td>
+            <td><cite>The Great Gatsby</cite> by F. Scott Fitzgerald</td>
+          </tr>
+          <tr>
+            <td>&lt;abbr&gt;</td>
+            <td>
+              Defines an abbreviation or an acronym, with an optional
+              description.
+            </td>
+            <td>
+              <abbr title="World Health Organization">WHO</abbr> provides health
+              guidance.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="boxModel">
+      <h3>The Box Model</h3>
+      <table>
+        <tr>
+          <td id="marginBox">
+            Margin<br />&nbsp;
+            <table>
+              <tr>
+                <td id="borderBox">
+                  Border<br />&nbsp;
+                  <table>
+                    <tr>
+                      <td id="paddingBox">
+                        Padding<br />&nbsp;
+                        <table>
+                          <tr>
+                            <td id="contentBox">Content</td>
+                          </tr>
+                        </table>
+                        &nbsp;
+                      </td>
+                    </tr>
+                  </table>
+                  &nbsp;
+                </td>
+              </tr>
+            </table>
+            &nbsp;
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="cssRules">
+      <h2>CSS Rules</h2>
+      <p>
+        CSS, cascading style sheets controls how elements should be rendered on
+        screen, on paper, in speech, or on other media
+      </p>
+      <h4>Linking a CSS file to a page</h4>
+      <table>
+        <td id="addCSS">&lt;link rel="stylesheet" href="styles.css"&gt;</td>
+      </table>
+      <br />
+      <table>
+        <thead>
+          <tr>
+            <th>Selector</th>
+            <th>HTML</th>
+            <th>CSS</th>
+            <th>notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HTML tag</td>
+            <td>&lt;p&gt;</td>
+            <td>p</td>
+            <td>Standard HTML tags</td>
+          </tr>
+          <tr>
+            <td>ID</td>
+            <td>id="name"</td>
+            <td>#name</td>
+            <td>Only used by a single HTML element</td>
+          </tr>
+          <tr>
+            <td>Class</td>
+            <td>class="name"</td>
+            <td>.name</td>
+            <td>Can be assigned to multiple HTML elements</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>CSS selectors</h4>
+      <table>
+        <tr>
+          <td>
+            <pre>
+                        tag {
+                            property: value;
+                        }
+                        </pre
+            >
+            <pre>
+                    .idName {
+                        property: value;
+                    }
+                    </pre
+            >
+            <pre>
+                        #className {
+                            property: value;
+                        }
+                     </pre
+            >
+          </td>
+        </tr>
+      </table>
+
+      <h4>Grouping CSS selectors</h4>
+      <pre>
+                #className, #className  {
+                    property: value;
+                }
+            </pre
+      >
+      <h4>Descendant Selectors</h4>
+      <pre>
+                #className descendant  {
+                    property: value;
+                }
+            </pre
+      >
+    </div>
+  </body>
+</html>
