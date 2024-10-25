@@ -7,3 +7,8 @@ let quotes = [
     'Out of difficulties grow miracles',
     'Gotta love animals'
 ]
+
+btn.addEventListener('click', function(){
+    var randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
+    output.innerHTML = randomQuote;
+})
