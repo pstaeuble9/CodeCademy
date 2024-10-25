@@ -1,0 +1,21 @@
+body {
+    padding: 2em;
+    background-color: #00cdac;
+    margin-top: 2em;
+    text-align: center;
+    color: #00a5e3;
+  }
+  
+  #container {
+    background-color: #ffbf65;
+    border: 5px solid #00a5e3;
+    height: 275px;
+    width: 750px;
+    margin-top: 2em;
+    text-align: center;
+    color: #00a5e3;
+    justify-content: center;
+  }
+  
+  
+  
